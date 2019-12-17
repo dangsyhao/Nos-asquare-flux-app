@@ -1,7 +1,7 @@
 
+import Store from './store'
 const Dispatcher = require('flux').Dispatcher;
 const AppDisPatCher = new Dispatcher();
-const Store = require('./store');
 
 AppDisPatCher.register(function (action) {
     switch (action.actionType) {

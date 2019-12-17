@@ -1,14 +1,14 @@
 const AppDisPatCher = require('./dispatcher');
 
-const Action = {
+class Action {
 
-    addNewText:function (text) {
+    addNewText (text) {
         AppDisPatCher.dispatch({
             actionType:'ADD_NEW_STATUS',
             text :text
         })
     }
 
-};
-
-module.exports = Action;
+}
+var Action_obj = new Action();
+export default Action_obj

@@ -1,7 +1,7 @@
-import React from "react";
-const Store = require('./store');
-const App = require('./Action');
+import Action from './Action';
 
+import React from "react";
+import Store from './store'
 class View extends React.Component {
 
     constructor() {
@@ -20,7 +20,7 @@ class View extends React.Component {
     }
 
     handleText(){
-        return App.addNewText('ĐÃ CẬP NHẬT STATUS -> OK')
+        return Action.addNewText('ĐÃ CẬP NHẬT STATUS -> OK')
     }
 
     _onchange(){
@@ -28,7 +28,6 @@ class View extends React.Component {
     }
 
     render() {
-        console.log(Store.getStatus());
         return(
 
             <div>

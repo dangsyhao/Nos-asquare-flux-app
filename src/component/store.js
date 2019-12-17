@@ -1,31 +1,38 @@
+import React from "react";
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 
-const Store = assign({}, EventEmitter.prototype, {
 
-    status : 'CHUA CAP NHAT STATUS !',
+class Store extends React.Component{
 
-    getStatus:function () {
+    constructor() {
+        super();
+        this.status = 'CHUA CAP NHAT STATUS !';
+    }
+
+    getStatus () {
         return this.status;
-    },
+    }
 
-    changeStatus:function (text) {
-        return this.status = text;
-    },
+    changeStatus(text) {
+         this.status = text;
+    }
 
-    emitChange: function () {
+    emitChange () {
         this.emit('change');
-    },
+    }
 
-    addChangeListener: function(calback){
+    addChangeListener(calback){
         this.on('change',calback)
-    },
+    }
 
-    removeChangeListener: function(calback){
+    removeChangeListener(calback){
         this.removeListener('change',calback);
-    },
+    }
 
+}
 
-});
+var Store_obj = new Store();
+Store_obj= assign(Store_obj,EventEmitter.prototype);
+export default Store_obj;
 
-module.exports = Store;
